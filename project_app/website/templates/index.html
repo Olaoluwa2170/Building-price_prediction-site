@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/output.css">
+    <title>Document</title>
+</head>
+<body>
+        <!-- component -->
+<div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
+	<div class="relative py-3 sm:max-w-xl sm:mx-auto">
+		<div
+			class="absolute inset-0 bg-gradient-to-r from-blue-300 to-blue-600 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl">
+		</div>
+		<div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
+			<div class="max-w-md mx-auto ">
+				<div>
+					<h1 class="text-2xl font-semibold">Building Prediction Model</h1>
+				</div>
+
+                <!-- ['bedrooms', 'bathrooms', 'toilets', 'parking_space'] -->
+                <!-- ['Detached Bungalow',
+'Detached Duplex',
+'Semi Detached Bungalow',
+'Semi Detached Duplex',
+'Terraced Bungalow',
+'Terraced Duplexes'] -->
+
+				<div class="divide-y divide-gray-200">
+
+                    <!-- Form -->
+					<form action="/" method="POST" id="build-form">
+                        <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
+
+                            <!-- Building Title start -->
+                            <div class="relative mb-5">
+                                <!-- <input autocomplete="on" id="Building_titles" name="Building_titles" type="text" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Email address" /> -->
+                                <label for="" class="mr-5 text-blue-500 font-semibold">Building Type</label>
+                                <select name="building_title" id="building_title" class="border rounded-md p-1 border-slate-700">
+                                    <option value="">Select Building Type</option>
+                                    <option value="Detached Bungalow">Detached Bungalow</option>
+                                    <option value="Detached Duplex">Detached Duplex</option>
+                                    <option value="Semi Detached Bungalow">Semi Detached Bungalow</option>
+                                    <option value="Terraced Bungalow">Terraced Bungalow</option>
+                                    <option value="Terraced Duplexes">Terraced Duplexes</option>
+                                </select>
+                            </div>
+
+
+
+
+                            <!-- Building Title end -->
+
+                            <!-- Towns -->
+
+                            <div class="relative mb-10">
+                                <label for="email" class="mr-5 text-blue-500 font-semibold">Town</label>
+                                <select name="building_town" id="building_town" class="border rounded-md p-1 border-slate-700">
+                                  <option value="">Select Building Location</option>
+                                </select>
+                            </div>
+
+                            <!-- Towns end -->
+
+                            <!-- ............ -->
+                            <div class="flex space-x-3">
+                                <div class="">
+                                    <div class="relative mb-5">
+                                        <input autocomplete="on" id="bedrooms" name="bedrooms" type="number" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="bedrooms" />
+                                        <label for="password" class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Bedrooms</label>
+                                    </div>
+                                    
+                                    <div class="relative mb-5">
+                                        <input autocomplete="off" type="number" id="bathrooms" name="bathrooms" type="bathrooms" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="bathrooms" />
+                                        <label for="bathrooms" class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Bathrooms</label>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div class="relative mb-5">
+                                        <input autocomplete="off" type="number" id="toilets" name="toilets" type="toilets" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="toilets" />
+                                        <label for="toilets" class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Toilets</label>
+                                    </div>
+                                    
+                                    <div class="relative mb-5">
+                                        <input autocomplete="off" type="number"  id="parking_space" name="parking_space" type="parking_space" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="parking_space" />
+                                        <label for="parking_space" class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Parking Spaces</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ................ -->
+
+                            <!-- submit -->
+                            <div class="relative">
+                                <button class="bg-blue-500 text-white mt-5 rounded-md px-2 py-1" type="submit">Submit</button>
+                            </div>
+                            <!-- submit -->
+
+                            <div class="hidden" id="price_div">
+                                <div class="px-5 py-2 bg-zinc-300 rounded-md shadow">
+                                    <span class="font-bold text-xl text-green-600" id="price_slot"></span>
+                                    <span class="text-blue-500 font-thin text-xl">
+                                        predicted amount
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+    <script
+    type="text/javascript"
+    src="{{url_for('static', filename = 'index.js')}}"></script>
+
+</body>
+</html>

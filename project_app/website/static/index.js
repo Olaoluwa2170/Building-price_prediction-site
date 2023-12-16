@@ -1,42 +1,14 @@
 const building_towns = document.querySelector('#building_town')
 
 
-const towns = ['Select Building Location','Lekki',
-'Ajah',
-'Ikoyi',
-'Alimosho',
-'Magodo',
-'Ibeju Lekki',
-'Idimu',
-'Ikeja',
-'Gbagada',
-'Ilupeju',
-'Victoria Island (VI)',
-'Isheri North',
-'Ikotun',
-'Surulere',
-'Ikorodu',
-'Ijaiye',
-'Kosofe',
-'Isolo',
-'Ipaja',
-'Eko Atlantic City',
-'Isheri',
-'Ifako-Ijaiye',
-'Yaba',
-'Ogudu',
-'Ejigbo',
-'Lagos Island',
-'Ojo',
-'Agege',
-'Ojodu',
-'Shomolu',
-'Amuwo Odofin',
-'Ayobo',
-'Apapa',
-'Epe',
-'Maryland']
-
+const towns = ['Select Building Location','Lekki','Agbara-Igbesa', 'Agege', 'Ajah', 'Alimosho', 'Amuwo Odofin', 'Apapa',
+       'Ayobo', 'Badagry', 'Egbe', 'Ejigbo', 'Eko Atlantic City', 'Epe',
+       'Gbagada', 'Ibeju', 'Ibeju Lekki', 'Idimu', 'Ifako-Ijaiye', 'Ijaiye',
+       'Ijede', 'Ijesha', 'Ikeja', 'Ikorodu', 'Ikotun', 'Ikoyi', 'Ilupeju',
+       'Imota', 'Ipaja', 'Isheri', 'Isheri North', 'Isolo', 'Ketu', 'Kosofe',
+       'Lagos Island', 'Lekki', 'Magodo', 'Maryland', 'Mushin', 'Ogudu', 'Ojo',
+       'Ojodu', 'Ojota', 'Oke-Odo', 'Orile', 'Oshodi', 'Shomolu', 'Surulere',
+       'Victoria Island (VI)', 'Yaba']
 
 building_towns.innerHTML = towns.map(town => `<option value="${town}">${town}</option>`).join('')
 

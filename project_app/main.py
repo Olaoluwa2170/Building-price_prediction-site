@@ -1,5 +1,5 @@
 from flask.json import jsonify
-from website import create_app, predict_prices, formatting_price
+from website import create_app, formatting_price, create_dataframe, make_pred
 from flask import render_template, request, url_for
 
 
@@ -21,13 +21,13 @@ def predict():
 @app.route('/getformdata', methods=['POST'])
 def getformdata():
     data = request.get_json()
-    inputs = list(data.values())
-    predicted_price  = formatting_price(predict_prices(inputs))
-    response_data = { 'message': 'Message received', 'status': 200, 'data': predicted_price }
+    predicted_price = make_pred(create_dataframe(data))
+    formated_price = formatting_price(predicted_price[0])
+    response_data = { 'message': 'Message received', 'status': 200, 'data': formated_price }
     return jsonify(response_data)
 
 
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host=0.0.0.0)

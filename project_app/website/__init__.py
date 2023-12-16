@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 import pandas as pd
 import locale
-
+# from flask_ngrok import run_with_ngrok
 
 model = pickle.load(open('project_app\website\static\model.pkl', 'rb'))
 scaler_X = pickle.load(open('project_app\website\static\scaler_x', 'rb'))

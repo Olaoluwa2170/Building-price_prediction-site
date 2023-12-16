@@ -1,11 +1,14 @@
 from flask.json import jsonify
 from website import create_app, formatting_price, create_dataframe, make_pred
-from flask import render_template, request, url_for
+from flask import render_template, request, url_for, Flask
+from flask_ngrok import run_with_ngrok
 
 
 # , render_template, request, url_for
 
 app = create_app()
+run_with_ngrok(app)
+
 
 @app.route('/')
 def home():
@@ -30,4 +33,4 @@ def getformdata():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run()

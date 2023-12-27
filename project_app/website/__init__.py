@@ -53,3 +53,6 @@ def make_pred(input):
 
 # trying = create_dataframe({'bedrooms': '2', 'bathrooms': '2', 'toilets': '1', 'parking_space': '2', 'title': 'Detached Duplex', 'town': 'Ibeju Lekki'})
 # print(make_pred(trying))
+
+
+
